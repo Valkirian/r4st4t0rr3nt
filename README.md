@@ -1,10 +1,10 @@
-# R4ST4T0RR3NT
+# GOTORRENT
 is a tool for download magnet and torrent files in a safe way
 
 ## INSTALL
 
 + `git clone https://github.com/Valkirian/r4st4t0rr3nt.git && cd r4st4t0rr3nt`
-+ `go install`
++ `go build`
 
 ## USAGE GENERAL
 ```
