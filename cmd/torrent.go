@@ -18,10 +18,8 @@ package cmd
 import (
 	"log"
 	"os"
-	"time"
 
 	"github.com/anacrolix/torrent"
-	"github.com/schollz/progressbar/v3"
 	"github.com/spf13/cobra"
 )
 
@@ -54,14 +52,6 @@ var torrentCmd = &cobra.Command{
 		trrnt.DownloadAll()
 
 		zipfile := trrnt.Name()
-		size := trrnt.Length()
-
-		//Progress bar
-		bar := progressbar.DefaultBytes(size)
-		for i := 0; i < int(size); {
-			bar.Add64(trrnt.BytesCompleted())
-			time.Sleep(1000 * time.Millisecond)
-		}
 
 		c.WaitAll()
 		log.Printf("File %s is completed download", zipfile)
